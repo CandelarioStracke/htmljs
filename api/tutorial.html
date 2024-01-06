@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="description" content="HtmlJs Tutorials. Each tutorial is editable like Jsfiddle.">
+    <meta name="keywords" content="javascript, javascript MVVM framework, MVVM, full-fledged framework, render engine, javascript render engine, fastest MVVM in the world">
+    <meta name="author" content="nhan.htmljs@gmail.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HtmlJs tutorial - interactive tutorial of HtmlJs</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="bootstrap/font-awesome/css/font-awesome.css" />
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+    <link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+    <!-- Bootstrap core CSS end -->
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie_hack.css" />
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/doc.min.css" />
+    <style>
+        .bs-example.explain::after {
+            content: "Explaination";
+        }
+        .bs-example.explain button {
+            display: block;
+            margin: 10px auto;
+        }
+        .js-code:after {
+           content: "JAVASCRIPT";
+        }
+        .html-code:after {
+           content: "HTML";
+        }
+        .result:after {
+           content: "RESULT";
+        }
+        .bs-example {
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body data-target="#affix-nav">
+
+    <div class="navbar navbar-default navbar-fixed-top ">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">&lt;Js&gt;</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+        </div>
+        <div class="navbar-collapse collapse" id="topNavigation">
+            <ul class="nav navbar-nav">
+
+                <li class="dropdown">
+                    <a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-tags"></i> Namespaces
+                        <b class="caret"></b></a>
+                    <ul class="dropdown-menu ">
+                        <li><a href="html.html">html</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-book"></i> Classes
+                        <b class="caret"></b></a>
+                    <ul class="dropdown-menu ">
+                        <li><a href="html.ajax.html">html.ajax</a></li>
+                        <li><a href="html.observable.html">html.observable</a></li>
+                        <li><a href="html.observableArray.html">html.observableArray</a></li>
+                        <li><a href="html.Promise.html">html.Promise</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="tutorial.html" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-play"></i> Tutorial
+                        <b class="caret"></b></a>
+                    <ul class="dropdown-menu ">
+                        <li>
+                            <a href="tutorial.html">Introduction</a></li>
+                        <li>
+                            <a href="tutorial.list.html">Working with List</a>
+                        </li>
+                        <li>
+                            <a href="tutorial.jquery.html">jQuery Integration</a>
+                        </li>
+                        <li><a href="tutorial.howdoesitwork.html">How does it work</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-download"></i> Download <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a download="" href="http://nhanfu.github.io/htmljs/dist/html.js">Development version</a></li>
+                        <li><a download="" href="http://nhanfu.github.io/htmljs/dist/html.min.js">Production version</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+    <div class="container">
+
+        <!--------------------------------------------------------------------------------->
+        <!-- NAV HEADER -->
+
+        <!-- NAV HEADER END -->
+        <!--------------------------------------------------------------------------------->
+        <!-- MAIN CONTENTS -->
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-md-12" style="margin-bottom: 10px;">
+                <h1 style="margin-bottom: 0;">Introduction</h1>
+                <a class="btn btn-primary" href="#step1" id="previous"><i class="glyphicon glyphicon-step-backward"></i> Previous</a>
+                <button class="btn btn-primary" href="#" id="btnAction"><i class="glyphicon glyphicon-play"></i> Run</button>
+                <a class="btn btn-primary" href="#dependency" id="next">Next <i class="glyphicon glyphicon-step-forward"></i></a>
+            </div>
+        </div>
+
+        <div class="row margin5">
+            <div class="col-xs-6">
+                <div class="bs-example explain">
+                    <div style="height: 240px; overflow: auto;"></div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="bs-example js-code">
+                    <div class="js-tab row" id="LB-JavaScript"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin5">
+            <div class="col-xs-6">
+                <div class="bs-example html-code">
+                    <div class="html-tab row" id="LB-HTML"></div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="bs-example result example-tab" style="height: 288px; overflow: auto;"></div>
+            </div>
+        </div>
+        <!-- MAIN CONTENTS END -->
+        <!---------------------------------------------------------------------->
+    </div>
+
+    <!-- TEMPLATE -->
+    <div style="display: none;">
+        <div id="step1">
+            <script type="text/html" class="html help-html">
+<input id="firstName" class="form-control" />
+<br />
+<span id="hwSpan">Hello </span>!
+
+
+            </script>
+            <script type="text/html" class="js help-js">function ViewModel() {
+  this.firstName = html.observable('Marie');
+}
+var vm = new ViewModel();
+
+html('#firstName').value(vm.firstName);
+html('#hwSpan').text(vm.firstName);
+            </script>
+            <script type="text/html" class="explain">
+                <h3>Welcome! </h3>
+                We're going to examine MVVM pattern using HtmlJs. We're working with the most classical example "Hello world".
+                <br />
+                <br />
+                You'll learn how to define <span class="bold">data</span> which is called <span class="bold">ViewModel</span> and binding data to HTML which is called <span class="bold">View</span>.
+                <br />
+                <br />
+                <h4>View</h4>
+                In HTML tab, we have two elements. First element is an input, and the second is the span. They are just normal HTML tags. <br />
+                <br />
+                <h4>ViewModel and binding</h4>
+                In JavaScript tab, we define an observable object, we call them <span class="bold">"ViewModel"</span>.
+                Then we bind data to the View using JavaScript. Why using JavaScript, is it easier to bind data in HTML template like AngularJs? The answer is no, it's more difficult to work with data flow, control flow in a declarative language.
+                Using JavaScript, we have all the feature that JavaScript offers like prototype inheritance, closure,... to work with data.
+                Data binding is hard work; don't make it harder. <br /><br />
+                To bind data to an element; firstly query that element, then calling the binding function.<br />
+                <pre name="code" class="js">html('#hwInput').value(vm.firstName);
+html('#hwSpan').text(vm.lastName);</pre>
+                The first line will bind "Hello world" as the input value, the second line will bind to the text of span element.
+                Whenever you change input value, then the <span class="bold">helloWorld</span> also change its value, and so does the text which has been bound to <span class="bold">helloWorld</span>.
+                <br />
+                <br />
+                After add the above line of code, click on <span class="bold">Run</span> button on the top of the page to see the result.
+                If the result is OK then click on Next button.
+                <br />
+                <br />
+                <span class="bold italic">Having trouble?</span> At any time your code doesn't work as described, you can click on "Help me!" button.
+                This will replace your code with a working copy.
+                <br />
+
+                <button id="help" class="btn btn-primary"><i class="glyphicon glyphicon-flag"></i> Help me!</button>
+            </script>
+            <div class="previous">#step1</div>
+            <div class="next">#step2</div>
+            <div class="title">Introduction</div>
+        </div>
+
+        <div id="step2"><script type="text/html" class="help-html"><input id="firstName" class="form-control" />
+<input id="lastName" class="form-control" />  
+
+<br />
+<span id="hwSpan">Hello </span>!
+
+            </script>
+            <script type="text/html" class="help-js">function ViewModel() {
+  this.firstName = html.observable('Marie');
+  this.lastName = html.observable('Curie');
+}
+
+var vm = new ViewModel();
+
+html('#firstName').value(vm.firstName);
+html('#lastName').value(vm.lastName);
+html('#hwSpan').text(vm.firstName).text(' ').text(vm.lastName);
+            </script>
+            <script type="text/html" class="explain">
+            <h3>Define more observable objects</h3>
+            Trying to bind data from two observable values to two input fields. <br />
+            In HTML tab, insert an input tag for lastName, after firstName input
+            <pre name="code" class="js">&lt;input id="lastName" class="form-control" /&gt;</pre>
+            Declare one more observable objects after firstName
+            <pre name="code" class="js">this.firstName = html.observable('Marie');
+this.lastName = html.observable('Curie');</pre>
+Binding it to the View, put the code below at the bottom of JavaScript panel
+            <pre name="code" class="js">html('#lastName').value(vm.lastName);</pre>
+            At this time, lastName has bound to the input. However, you can't see the text of span element changed after lastName.
+            To bind lastName to the span element; replace the code at binding text by the following line of code.
+            <pre name="code" class="js">html('#hwSpan').text(vm.firstName).text(' ').text(vm.lastName);</pre>
+            The code will add a space and lastName to the span, now lastName of text element is synchronized with input element.
+            <button id="help" class="btn btn-primary"><i class="glyphicon glyphicon-flag"></i> Help me!</button>
+            </script>
+            <div class="previous">#step1</div>
+            <div class="next">#step3</div>
+            <div class="title">Introduction</div>
+        </div>
+
+        <div id="step3"><script type="text/html" class="help-html"><input id="firstName" class="form-control" />
+<input id="lastName" class="form-control" />  
+
+<br />
+<span id="hwSpan">Hello </span>!
+
+            </script>
+            <script type="text/html" class="help-js">function ViewModel() {
+    this.firstName = html.observable('Marie');
+    this.lastName = html.observable('Curie');
+    this.fullName = html.observable(function () {
+        return this.firstName.data + ' ' + this.lastName.data;
+    }.bind(this));
+}
+
+var vm = new ViewModel();
+
+html('#firstName').value(vm.firstName);
+html('#lastName').value(vm.lastName);
+html('#hwSpan').text(vm.fullName);
+            </script>
+            <script type="text/html" class="explain">
+            <h3>Define computed value</h3>
+            We often have variable that depends on others. Without auto tracking mechanism, you have to maintain dependencies manually.
+            This is hard work and buggy. In this example, you'll learn how to create an observable object called computed value.
+            Define a variable named <span class="bold">"fullName"</span>
+            <pre name="code" class="js">this.fullName = html.observable(function () {
+    return this.firstName.data + ' ' + this.lastName.data;
+}.bind(this));</pre>
+            We get pretty weird thing here at the last line <span class="bold italic">.bind(this)</span>.
+            This is to indicate that we should bind the context <span class="bold">"this"</span> into inner anonymous function.
+            Because each function usually have different context <span class="bold italic">"this"</span>.<br />
+            Then bind that to the span; at this time, we only bind fullName instead of firstName combines with lastName
+            <pre name="code" class="js">html('#hwSpan').text(vm.fullName);</pre>
+            Click <span class="bold">Next</span> to another section
+            <button id="help" class="btn btn-primary"><i class="glyphicon glyphicon-flag"></i> Help me!</button>
+            </script>
+            <div class="previous">#step2</div>
+            <div class="next">#step4</div>
+            <div class="title">Introduction</div>
+        </div>
+
+        <div id="step4"><script type="text/html" class="help-html"><input id="firstName" class="form-control" />
+<input id="lastName" class="form-control" />  
+
+<br />
+<span id="hwSpan">Hello </span>!
+<button id="cap" class="btn btn-primary">Capitalize</button>
+            </script>
+            <script type="text/html" class="help-js">function ViewModel() {
+    this.firstName = html.observable('Marie');
+    this.lastName = html.observable('Curie');
+    this.fullName = html.observable(function () {
+        return this.firstName.data + ' ' + this.lastName.data;
+    }.bind(this));
+
+    var self = this;
+
+    this.capitalize = function (e) {
+        self.firstName.data = self.firstName.data.toUpperCase();
+        self.lastName.data = self.lastName.data.toUpperCase();
+    };
+}
+
+var vm = new ViewModel();
+
+html('#firstName').value(vm.firstName);
+html('#lastName').value(vm.lastName);
+html('#hwSpan').text(vm.fullName);
+
+html('#cap').onClick(vm.capitalize);</script>
+            <script type="text/html" class="explain">
+            <h3>Event binding</h3>
+            In this section, you'll learn how to interact with the UI without touch it but the data. We're going to add a button that capitalize fullName.
+            <pre name="code" class="html"><button id="cap" class="btn btn-primary">Capitalize</button></pre>
+            And the JavaScript.
+            <pre name="code" class="js">function ViewModel() {
+    // ... leave the firstName, lastName, fullName unchanged
+
+    var self = this;
+
+    this.capitalize = function (e) {
+        self.firstName.data = self.firstName.data.toUpperCase();
+        self.lastName.data = self.lastName.data.toUpperCase();
+    };
+}
+            </pre>
+            This time we have another weird code; that is <span class="bold italic">var self = this;</span>
+            This code is to save the context <span class="bold italic">this</span> of parent function for later use.
+            Keep in mind that every JavaScript function has its own context, and it can be overriden at anytime.
+            In this case, the context is the button element. <br />
+            After all, we put one more line of code to the bottom of JavaScript panel
+            <pre name="code" class="js">html('#cap').onClick(vm.capitalize);</pre>
+            After clicking on the button, we can see the whole UI change, correcsponding to our data state.
+
+            <button id="help" class="btn btn-primary"><i class="glyphicon glyphicon-flag"></i> Help me!</button>
+
+            </script>
+            <div class="previous">#step3</div>
+            <div class="next">#step5</div>
+            <div class="title">Introduction</div>
+        </div>
+
+        <div id="step5">
+            <script type="text/html" class="explain">
+                <h3>Congratulation!</h3>
+                Here are some key points that you got now <br />
+                <ul style="margin-left: 8px;">
+                    <li>- How MVVM works, it is basically data and the UI synchronized.</li>
+                    <li>- How to separate your ViewModel with object-oriented pattern</li>
+                </ul>
+                <br />
+                In next sections, we'll examine how to work with observableAray.</script>                 
+            <div class="previous">#step4</div>
+            <div class="next">tutorial.list.html#step1</div>
+            <div class="title">Introduction</div>
+        </div>
+    </div>
+    <!-- END TEMPLATE -->
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/shCore.js"></script>
+    <script type="text/javascript" src="js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="js/shBrushCss.js"></script>
+    <script type="text/javascript" src="js/shBrushXml.js"></script>
+    <script type="text/javascript" src="../dist/html.js"></script>
+    <script type="text/javascript" src="js/editor/ace.js"></script>
+    <script type="text/javascript" src="js/tutorial.js"></script>
+    <script type="text/javascript">
+        html.router.ignoreRoute(':page.html#:section');
+        html.router.ignoreRoute(':page.html');
+    </script>
+</body>
+</html>
